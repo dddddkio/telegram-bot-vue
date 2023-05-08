@@ -48,6 +48,10 @@ export default {
       console.log(row)
       Telegram.WebApp.close()
     },
+    handleButtonClick(){
+      alert("You have paid successfully!")
+      window.Telegram.WebApp.close()
+    }
   },
 };
 
