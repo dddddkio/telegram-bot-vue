@@ -3,18 +3,13 @@
     <div>Your current points balance is: <text class="text-bold text-black" style="font-size: large;">xxx</text></div>
     <div style="margin-top:10px;margin-bottom: 15px;">Just pay and get points now:</div>
 
-    <el-table 
-      ref="table" 
-      :data="tableData" 
-      style="width: 100%" 
-      @row-click="handleRowClick" 
-      highlight-current-row>
+    <el-table ref="table" :data="tableData" style="width: 100%" @row-click="handleRowClick" highlight-current-row>
       <el-table-column prop="Combo" label="Combo" />
       <el-table-column prop="Points" label="Points" />
-      <el-table-column prop="UnitPrice" label="UnitPrice" />
+      <el-table-column prop="UnitPrice" label="Unit Price" />
     </el-table>
 
-    <el-button type="success" style="margin-top:3vh;width:100%" @click="handleButtonClick">去支付</el-button>
+    <el-button type="success" style="margin-top:3vh;width:100%" @click="handleButtonClick">Pay</el-button>
   </div>
 </template>
 
@@ -51,9 +46,11 @@ export default {
     handleRowClick(row, event) {
       console.log('选中了第' + (this.tableData.indexOf(row) + 1) + '行');
       console.log(row)
+      Telegram.WebApp.close()
     },
   },
 };
+
 </script>
 
 
