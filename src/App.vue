@@ -52,7 +52,7 @@ export default {
     },
     handleButtonClick(){
       alert("You have paid successfully!")
-      Telegram.WebApp.sendData(this.row)
+      Telegram.WebApp.sendData(JSON.stringify(this.row))
       Telegram.WebApp.close()
     }
   },
