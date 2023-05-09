@@ -51,7 +51,7 @@ export default {
     },
     handleButtonClick(){
       alert("You have paid successfully!")
-      window.Telegram.WebApp.senData(this.row)
+      // window.Telegram.WebApp.senData(this.row)
       window.Telegram.WebApp.close()
     }
   },
