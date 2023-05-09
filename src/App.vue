@@ -17,6 +17,7 @@
 export default {
   data() {
     return {
+      row:{},
       tableData: [
         {
           Combo: "$4.99",
@@ -45,11 +46,12 @@ export default {
     
     handleRowClick(row, event) {
       console.log('选中了第' + (this.tableData.indexOf(row) + 1) + '行');
-      console.log(row)
-      Telegram.WebApp.close()
+      this.row = row
+      // Telegram.WebApp.close()
     },
     handleButtonClick(){
       alert("You have paid successfully!")
+      window.Telegram.WebApp.senData(this.row)
       window.Telegram.WebApp.close()
     }
   },
