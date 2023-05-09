@@ -47,12 +47,12 @@ export default {
     handleRowClick(row, event) {
       console.log('选中了第' + (this.tableData.indexOf(row) + 1) + '行');
       this.row = row
-      Telegram.WebApp.close()
+      //Telegram.WebApp.close()
     },
     handleButtonClick(){
       alert("You have paid successfully!")
-      // window.Telegram.WebApp.senData(this.row)
-      window.Telegram.WebApp.close()
+      Telegram.WebApp.senData(this.row)
+      Telegram.WebApp.close()
     }
   },
 };
